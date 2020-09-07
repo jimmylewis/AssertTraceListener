@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30428.66
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssertTraceListener", "AssertTraceListener\AssertTraceListener.csproj", "{3BD5A9BE-8EE1-45AC-9481-B9E8FA560ADA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{EACF9067-1ADF-4A8D-92DD-12F35F0BA803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestApp", "test\WpfTestApp\WpfTestApp.csproj", "{180B3578-A0F2-469A-A943-FD18B697E8E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{3BD5A9BE-8EE1-45AC-9481-B9E8FA560ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BD5A9BE-8EE1-45AC-9481-B9E8FA560ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BD5A9BE-8EE1-45AC-9481-B9E8FA560ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180B3578-A0F2-469A-A943-FD18B697E8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180B3578-A0F2-469A-A943-FD18B697E8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180B3578-A0F2-469A-A943-FD18B697E8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180B3578-A0F2-469A-A943-FD18B697E8E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{180B3578-A0F2-469A-A943-FD18B697E8E9} = {EACF9067-1ADF-4A8D-92DD-12F35F0BA803}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2B6A4B1-45F8-44CE-856B-55600DFA23E4}
