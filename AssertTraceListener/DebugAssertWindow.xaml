@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AssertTraceListener"
         mc:Ignorable="d"
-        Title="DebugAssertWindow" Height="450" Width="800">
+        x:ClassModifier="internal"
+        d:DataContext="{d:DesignInstance local:AssertionViewModel}"
+        ResizeMode="CanResizeWithGrip"
+        Title="Assertion Failed" Height="525" Width="426">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" x:Name="TitleRow" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" x:Name="ButtonBarRow" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1"
+                    Margin="5">
+            <TextBlock Text="{Binding Message}" />
+            <TextBlock Text="{Binding DetailedMessage}" />
+            <TextBlock Text="{Binding StackTrace}" />
+        </StackPanel>
+
+        <DockPanel Grid.Row="2"
+                   Margin="0"
+                   Background="LightGray">
+            <DockPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="10,10" />
+                    <Setter Property="Padding" Value="5" />
+                    <Setter Property="Width" Value="80" />
+                </Style>
+            </DockPanel.Resources>
+            <Button Content="Ignore" DockPanel.Dock="Right" Click="IgnoreButton_Click" />
+            <Button Content="Debug" DockPanel.Dock="Right" Click="DebugButton_Click" />
+            <Button Content="Quit" DockPanel.Dock="Right" Click="QuitButton_Click" />
+            <!-- And one more child to fill the dock -->
+            <ContentControl />
+        </DockPanel>
     </Grid>
 </Window>

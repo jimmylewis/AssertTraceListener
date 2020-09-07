@@ -1,25 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AssertTraceListener
 {
     /// <summary>
     /// Interaction logic for DebugAssertWindow.xaml
     /// </summary>
-    public partial class DebugAssertWindow : Window
+    internal partial class DebugAssertWindow : Window
     {
-        public DebugAssertWindow()
+        internal DebugAssertWindow(AssertionViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
+        }
+
+        internal DialogAction Action { get; private set; }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Action = DialogAction.Quit;
+            Close();
+        }
+
+        private void DebugButton_Click(object sender, RoutedEventArgs e)
+        {
+            Action = DialogAction.Debug;
+            Close();
+        }
+
+        private void IgnoreButton_Click(object sender, RoutedEventArgs e)
+        {
+            Action = DialogAction.Ignore;
+            Close();
         }
     }
 }
